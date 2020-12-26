@@ -6,16 +6,16 @@
 #
 
 # System config
-use constant BBSCGI => '2020/12/22';		# Dia da ultima atualização
+use constant BBSCGI => '2020/12/26';		# Dia da ultima atualização
 use constant ADMIN_PASS => '';			# Admin password. For fucks's sake, change this.
 use constant SECRET => '';				# Cryptographic secret. CHANGE THIS to something totally random, and long.
-use constant CAPPED_TRIPS => (''');	# Admin tripcode hash, for startng threads when locked down, and similar. Format is '!trip'=>'capcode', where 'capcode' is what is shown instead of the trip. This can contain HTML, but keep it valid XHTML!
+use constant CAPPED_TRIPS => ('');	# Admin tripcode hash, for startng threads when locked down, and similar. Format is '!trip'=>'capcode', where 'capcode' is what is shown instead of the trip. This can contain HTML, but keep it valid XHTML!
 
 # Page look
 use constant TITLE => '＠2-ch掲示板';	# Name of this image board
 use constant SHOWTITLETXT => 1;				# Show TITLE at top (1: yes  0: no)
 use constant SHOWTITLEIMG => 0;				# Show image at top (0: no, 1: single, 2: rotating)
-use constant TITLEIMG => 'title.jpg';			# Title image (point to a script file if rotating)
+use constant BBS_TITLE_PICTURE => 'title.gif';			# Title image (point to a script file if rotating)
 use constant THREADS_DISPLAYED => 10;			# Number of threads on the front page
 use constant THREADS_LISTED => 40;				# Number of threads in the thread list
 use constant REPLIES_PER_THREAD => 10;			# Replies shown
@@ -71,12 +71,12 @@ use constant MAX_LINES_SHOWN => 9999999999999999999999999999999;			# Max lines o
 #use constant TRIM_METHOD => 1;					# Which threads to trim (0: oldest - like futaba 1: least active - furthest back)
 #use constant REQUIRE_THREAD_TITLE => 1;		# Require a title for threads (0: no, 1: yes)
 #use constant DATE_STYLE => '2ch';				# Date style ('2ch', 'futaba', 'localtime, 'http')
-#use constant DISPLAY_ID => 'thread, day, sage';# How to display user IDs (0 or '': don't display,
+use constant DISPLAY_ID => 'thread, day';	# How to display user IDs (0 or '': don't display,
 												#  'day', 'thread', 'board' in any combination: make IDs change for each day, thread or board,
 												#  'mask': display masked IP address (similar IPs look similar, but are still encrypted)
 												#  'sage': don't display ID when user sages, 'link': don't display ID when the user fills out the link field,
 												#  'ip': display user's IP, 'host': display user's host)
-#use constant EMAIL_ID => '???';				# Replace the ID with this string when the ID is hidden (DISPLAY_ID contains 'sage' or 'link').
+use constant EMAIL_ID => '???';				# Replace the ID with this string when the ID is hidden (DISPLAY_ID contains 'sage' or 'link').
 #use constant SILLY_ANONYMOUS => '';			# Make up silly names for anonymous people (same syntax as DISPLAY_ID)
 #use constant FORCED_ANON => 0;					# Force anonymous posting (0: no, 1: yes)
 use constant TRIPKEY => ' ◆';					# This character is displayed before tripcodes
