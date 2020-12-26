@@ -35,7 +35,7 @@ use constant AUTOCLOSE_DAYS => 10;				# Maximum number of days with no activity 
 #use constant MAX_MEGABYTES => 0;				# Maximum size to use for all images in megabytes - set to 0 to disable
 #use constant MAX_FIELD_LENGTH => 100;			# Maximum number of characters in subject, name, and email
 #use constant MAX_COMMENT_LENGTH => 8192;		# Maximum number of characters in a comment
-use constant MAX_LINES_SHOWN => 0;			# Max lines of a comment shown on the main page (0 = no limit)
+use constant MAX_LINES_SHOWN => 999999999999999999999999;			# Max lines of a comment shown on the main page
 #use constant ALLOW_ADMIN_EDIT => 0;			# Allow editing of include files and spam.txt from admin.pl.
                                     			# Warning! This is a security risk, since include templates can run code! Only enable if you completely trust your moderators!
 
