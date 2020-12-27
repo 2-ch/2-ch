@@ -26,13 +26,13 @@ use constant S_ALLTHREADS => 'Lista de thread está aqui';
 use constant S_NEWTHREAD_TITLE => 'Criação de nova thread';
 use constant S_NAME => 'Nome:';
 use constant S_LINK => 'E-mail:';
-use constant S_FORCEDANON => '(Anonymous posting is being enforced)';
-use constant S_CAPTCHA => 'Verification:';
+use constant S_FORCEDANON => '';
+use constant S_CAPTCHA => 'Verificação:';
 use constant S_TITLE => 'Título:';
 use constant S_NEWTHREAD => 'Criação de nova thread';
-use constant S_IMAGE => 'Image:';
-use constant S_IMAGEDIM => 'Image: ';
-use constant S_NOTHUMBNAIL => 'No<br />thumbnail';
+use constant S_IMAGE => 'Imagem:';
+use constant S_IMAGEDIM => 'Imagem: ';
+use constant S_NOTHUMBNAIL => 'Sem<br />thumbnail';
 use constant S_REPLY => 'Escrever';
 use constant S_LISTEXPL => '';
 use constant S_PREVEXPL => '';
@@ -40,18 +40,18 @@ use constant S_NEXTEXPL => '';
 use constant S_LISTBUTTON => '&#9632;';
 use constant S_PREVBUTTON => '&#9650;';
 use constant S_NEXTBUTTON => '&#9660;';
-use constant S_TRUNC => 'Post too long. Click to view the <a href="%s" rel="nofollow">whole post</a> or the <a href="%s">thread page</a>.';
-use constant S_PERMASAGED => ', permasaged';
+use constant S_TRUNC => 'Escrita muito longa. Clique para ver <a href="%s" rel="nofollow">escrita inteira</a> ou <a href="%s">thread inteira</a>.';
+use constant S_PERMASAGED => ', sage permanente';
 use constant S_POSTERNAME => ':';
 use constant S_DELETE => 'Del';
-use constant S_USERDELETE => 'Post deleted by user.';
+use constant S_USERDELETE => 'Apagado por usuário.';
 use constant S_MODDELETE => 'Aboーn';
 use constant S_CLOSEDTHREAD => '<div style="background-color:red;color:white;line-height:1em;margin:1px;padding:3px;">■ Não pode mais escrever</div>';
-use constant S_SPAMTRAP => 'Leave these fields empty (spam trap): ';
+use constant S_SPAMTRAP => 'Deixe estes campos vazios: ';
 
 use constant S_MOREOPTS => "";
-use constant S_FORMATTING => "Formatting:";
-use constant S_SAVE_FORMATTING => "Always use this formatting";
+use constant S_FORMATTING => "Formatação:";
+use constant S_SAVE_FORMATTING => "Sempre usar esta formatação";
 use constant S_FORMATS => {none=>"None"};
 use constant S_DESCRIBE_FORMATS => {
 	none=>'Only auto-links URLs and >> references.',
@@ -61,40 +61,40 @@ use constant S_DESCRIBE_FORMATS => {
 };
 
 use constant S_COL_NUM => "Num";
-use constant S_COL_TITLE => "Title";
-use constant S_COL_POSTS => "Posts";
-use constant S_COL_DATE => "Last post";
-use constant S_COL_SIZE => "File size";
-use constant S_LIST_PERMASAGED => 'permasaged';
-use constant S_LIST_CLOSED => 'closed';
+use constant S_COL_TITLE => "Título";
+use constant S_COL_POSTS => "Escrita";
+use constant S_COL_DATE => "Última escrita";
+use constant S_COL_SIZE => "Tamanho de arquivo";
+use constant S_LIST_PERMASAGED => 'sage permanente';
+use constant S_LIST_CLOSED => 'fechado';
 
-use constant S_FRONT => 'Front page';								# Title of the front page in page list
+use constant S_FRONT => 'Topo';								# Title of the front page in page list
 
 
 #
 # Error strings
 #
 
-use constant S_BADCAPTCHA => 'Wrong verification code entered.';			# Error message when the captcha is wrong
-use constant S_UNJUST => 'Posting must be done through a POST request.';	# Error message on an unjust POST - prevents floodbots or ways not using POST method?
-use constant S_NOTEXT => 'No text entered.';								# Error message for no text entered in to title/comment
-use constant S_NOTITLE => 'No title entered.';								# Error message for no title entered
-use constant S_NOTALLOWED => 'Posting not allowed.';						# Error message when the posting type is forbidden for non-admins
-use constant S_TOOLONG => 'The %s field is too long, by %d characters.';	# Error message for too many characters in a given field
-use constant S_UNUSUAL => 'Abnormal reply.';								# Error message for abnormal reply? (this is a mystery!)
-use constant S_SPAM => 'Spammers are not welcome here!';					# Error message when detecting spam
-use constant S_THREADCOLL => 'Somebody else tried to post a thread at the same time. Please try again.';		# If two people create threads during the same second
-use constant S_NOTHREADERR => 'Thread specified does not exist.';			# Error message when a non-existant thread is accessed
-use constant S_BADDELPASS => 'Password incorrect.';							# Error message for wrong password (when user tries to delete file)
-use constant S_NOTWRITE => 'Cannot write to directory.';					# Error message when the script cannot write to the directory, the chmod (777) is wrong
-use constant S_NOTASK => 'Script error; no valid task specified.';			# Error message when calling the script incorrectly
-use constant S_NOLOG => 'Couldn\'t write to log.txt.';						# Error message when log.txt is not writeable or similar
-use constant S_TOOBIG => 'The file you tried to upload is too large.';		# Error message when the image file is larger than MAX_KB
-use constant S_EMPTY => 'The file you tried to upload is empty.';			# Error message when the image file is 0 bytes
-use constant S_BADFORMAT => 'File format not allowed.';						# Error message when the file is not in a supported format.
-use constant S_DUPE => 'This file has already been posted <a href="%s">here</a>.';	# Error message when an md5 checksum already exists.
-use constant S_DUPENAME => 'A file with the same name already exists.';		# Error message when an filename already exists.
-use constant S_THREADCLOSED => 'This thread is closed.';					# Error message when posting in a legen^H^H^H^H^H closed thread									
+use constant S_BADCAPTCHA => 'Código de verificação errado.';			# Error message when the captcha is wrong
+use constant S_UNJUST => 'Escrita tem que ser feita por pedido POST.';	# Error message on an unjust POST - prevents floodbots or ways not using POST method?
+use constant S_NOTEXT => 'Texto não foi inserido.';								# Error message for no text entered in to title/comment
+use constant S_NOTITLE => 'Título não foi inserido.';								# Error message for no title entered
+use constant S_NOTALLOWED => 'Escrita é proibida.';						# Error message when the posting type is forbidden for non-admins
+use constant S_TOOLONG => 'O campo de %s é muito longo, por %d caracteres.';	# Error message for too many characters in a given field
+use constant S_UNUSUAL => 'Resposta anormal.';								# Error message for abnormal reply? (this is a mystery!)
+use constant S_SPAM => 'Detectado como spam!';					# Error message when detecting spam
+use constant S_THREADCOLL => 'Alguém tentou levantar uma thread ao mesmo tempo. Por favor tente denovo.';		# If two people create threads during the same second
+use constant S_NOTHREADERR => 'Thread especificada não existe.';			# Error message when a non-existant thread is accessed
+use constant S_BADDELPASS => 'Password errada.';							# Error message for wrong password (when user tries to delete file)
+use constant S_NOTWRITE => 'Não é possível escrever ao diretório.';					# Error message when the script cannot write to the directory, the chmod (777) is wrong
+use constant S_NOTASK => 'Script error; nenhuma tarefa válida especificada.';			# Error message when calling the script incorrectly
+use constant S_NOLOG => 'Não é possivel escrever ao log.txt.';						# Error message when log.txt is not writeable or similar
+use constant S_TOOBIG => 'Arquivo muito grande.';		# Error message when the image file is larger than MAX_KB
+use constant S_EMPTY => 'Arquivo está vazio.';			# Error message when the image file is 0 bytes
+use constant S_BADFORMAT => 'Formato de arquivo proibido.';						# Error message when the file is not in a supported format.
+use constant S_DUPE => 'Este arquivo já existe <a href="%s">aqui</a>.';	# Error message when an md5 checksum already exists.
+use constant S_DUPENAME => 'Arquivo com mesmo nome já existe.';		# Error message when an filename already exists.
+use constant S_THREADCLOSED => 'Esta thread está fechada.';					# Error message when posting in a legen^H^H^H^H^H closed thread									
 
 
 
