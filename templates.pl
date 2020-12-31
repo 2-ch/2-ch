@@ -48,6 +48,7 @@ use constant S_USERDELETE => 'Post deleted by user.';
 use constant S_MODDELETE => 'あぼーん';
 use constant S_CLOSEDTHREAD => '<div style="background-color:red;color:white;line-height:1em;margin:1px;padding:3px;">■ これ以上書き込みはできません。</div>';
 use constant S_SPAMTRAP => 'Leave these fields empty (spam trap): ';
+use constant S_MOBILE => 'スマホ用';
 
 use constant S_MOREOPTS => "";
 use constant S_FORMATTING => "Formatting:";
@@ -312,6 +313,7 @@ use constant THREAD_HEAD_TEMPLATE => compile_template( GLOBAL_HEAD_INCLUDE.q{
 }.include(INCLUDE_DIR."header.html").q{
 <div id="navigation">
 <const S_NAVIGATION>
+<a href="../../mobile.pl/<var $thread>/"><const S_MOBILE></a>
 <a href="<const expand_filename(HTML_SELF)>"><const S_RETURN></a>
 <a href="<var $self>/<var $thread>/"><const S_ENTIRE></a>
 <a href="<var $self>/<var $thread>/-100" rel="nofollow"><const S_FIRST1002></a>
