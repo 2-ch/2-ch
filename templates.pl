@@ -24,8 +24,8 @@ use constant S_MANAGE => 'Manage';
 use constant S_REBUILD => 'Rebuild caches';
 use constant S_ALLTHREADS => 'スレッド一覧はこちら';
 use constant S_NEWTHREAD_TITLE => '新規スレッド作成';
-use constant S_NAME => '名前:';
-use constant S_LINK => 'E-mail:';
+use constant S_NAME => '名前：';
+use constant S_LINK => 'E-mail<span style="font-size:xx-small;"> (省略可) </span>：';
 use constant S_FORCEDANON => '(Anonymous posting is being enforced)';
 use constant S_CAPTCHA => 'Verification:';
 use constant S_TITLE => 'タイトル:';
@@ -151,25 +151,17 @@ use constant POSTING_FORM_TEMPLATE => compile_template(q{
 
 <tr>
 	<td>
+		<if $thread><input type="submit" value="<const S_REPLY>" /></if>
 		<if !FORCED_ANON><const S_NAME></if>
 		<if FORCED_ANON><const S_LINK></if>
 	</td><td>
 		<if !FORCED_ANON><input type="text" name="field_a" size="19" maxlength="<const MAX_FIELD_LENGTH>" /> <const S_LINK> </if>
 		<if FORCED_ANON><input type="hidden" name="field_a" /></if>
  		<input type="text" name="field_b" size="19" maxlength="<const MAX_FIELD_LENGTH>" />
-		<if $thread><input type="submit" value="<const S_REPLY>" /></if>
 		<if SPAM_TRAP><div style="display:none"><const S_SPAMTRAP><input type="text" name="name" size="19" autocomplete="off" /><input type="text" name="link" size="19" autocomplete="off" /></div></if>
 		<small><a href="javascript:show('options<var $thread>')"><const S_MOREOPTS></a></small>
 	</td>
 </tr>
-
-<if ENABLE_CAPTCHA><tr>
-	<td><const S_CAPTCHA></td>
-	<td>
-		<input type="text" name="captcha" size="19" />
-		<img class="<var $captchaclass>" src="<const expand_filename('captcha.pl')>?selector=.<var $captchaclass>" />
-	</td>
-</tr></if>
 
 <tr style="display:none;vertical-align:top" id="options<var $thread>">
 	<td><const S_FORMATTING></td>
@@ -183,11 +175,8 @@ use constant POSTING_FORM_TEMPLATE => compile_template(q{
 		<div id="preview<var $thread>" class="replytext" style="display:none"></div>
 	</td>
 </tr>
-
-<tr>
 	<td></td>
-	<td><textarea name="comment" cols="64" rows="5" onfocus="size_field('<var $formid>',15)" onblur="size_field('<var $formid>',5)"></textarea></td>
-</tr>
+	<td><textarea name="comment" cols="70" rows="5" onfocus="size_field('<var $formid>',15)" onblur="size_field('<var $formid>',5)"></textarea></td>
 
 <if $allowimages><tr>
 	<td><const S_IMAGE></td>
@@ -502,17 +491,7 @@ use constant RSS_TEMPLATE => compile_template( q{
 
 use constant ERROR_TEMPLATE => compile_template( GLOBAL_HEAD_INCLUDE.q{
 <body class="errorpage">
-
-}.include(INCLUDE_DIR."header.html").q{
-
-<div id="navigation">
-<strong><const S_NAVIGATION></strong>
-<a href="<var escamp($ENV{HTTP_REFERER})>"><const S_RETURN></a>
-</div>
-
-<h1><var $error></h1>
-
-<h2><a href="<var escamp($ENV{HTTP_REFERER})>"><const S_RETURN></a></h2>
+<font size="+1" color="#FF0000"><b>ERROR: <var $error></b></font><a href="<var escamp($ENV{HTTP_REFERER})>"><const S_RETURN></a>
 
 }.GLOBAL_FOOT_INCLUDE);
 
