@@ -142,25 +142,22 @@ use constant GLOBAL_FOOT_INCLUDE => include(INCLUDE_DIR."footer.html").q{
 
 use constant POSTING_FORM_TEMPLATE => compile_template(q{
 <if !$thread><tr>
-	<td><const S_TITLE></td>
-	<td>
+<const S_TITLE>
 		<input type="text" name="title" size="46" maxlength="<const MAX_FIELD_LENGTH>" />
 		<input type="submit" value="<const S_NEWTHREAD>" />
-	</td>
+		</br>
+        </br>
 </tr></if>
 
 <tr>
-	<td>
 		<if $thread><input type="submit" value="<const S_REPLY>" /></if>
 		<if !FORCED_ANON><const S_NAME></if>
 		<if FORCED_ANON><const S_LINK></if>
-	</td><td>
 		<if !FORCED_ANON><input type="text" name="field_a" size="19" maxlength="<const MAX_FIELD_LENGTH>" /> <const S_LINK> </if>
 		<if FORCED_ANON><input type="hidden" name="field_a" /></if>
  		<input type="text" name="field_b" size="19" maxlength="<const MAX_FIELD_LENGTH>" />
 		<if SPAM_TRAP><div style="display:none"><const S_SPAMTRAP><input type="text" name="name" size="19" autocomplete="off" /><input type="text" name="link" size="19" autocomplete="off" /></div></if>
 		<small><a href="javascript:show('options<var $thread>')"><const S_MOREOPTS></a></small>
-	</td>
 </tr>
 
 <tr style="display:none;vertical-align:top" id="options<var $thread>">
@@ -175,7 +172,6 @@ use constant POSTING_FORM_TEMPLATE => compile_template(q{
 		<div id="preview<var $thread>" class="replytext" style="display:none"></div>
 	</td>
 </tr>
-	<td></td>
 	<td><textarea name="comment" cols="70" rows="5" onfocus="size_field('<var $formid>',15)" onblur="size_field('<var $formid>',5)"></textarea></td>
 
 <if $allowimages><tr>
@@ -258,7 +254,6 @@ use constant MAIN_PAGE_TEMPLATE => compile_template( GLOBAL_HEAD_INCLUDE.q{
 	<table><tbody>
 	<if !$closed><var POSTING_FORM_TEMPLATE-\>(thread=\>$thread,captchaclass=\>"postcaptcha",formid=\>"postform$thread",allowimages=\>ALLOW_IMAGE_REPLIES)></if>
 	<tr>
-		<td></td>
 		<td><div class="threadlinks">
 		<a href="<var $self>/<var $thread>/"><const S_ENTIRE2></a>
 		<a href="<var $self>/<var $thread>/l50" rel="nofollow"><const S_LAST50></a>
@@ -341,7 +336,6 @@ use constant THREAD_FOOT_TEMPLATE => compile_template( q{
 <table><tbody>
 <if $closed><tr><td></td><td><big><const S_CLOSEDTHREAD></big></td></tr></if>
 <tr>
-	<td></td>
 	<td><div class="threadlinks">
 	<a href="<const expand_filename(HTML_SELF)>"><const S_RETURN2></a>
 	<a href="<var $self>/<var $thread>/"><const S_ENTIRE></a>
