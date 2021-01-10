@@ -6,7 +6,7 @@
 #
 
 # System config
-use constant BBSCGI => '2020/12/26';		# Dia da ultima atualização
+use constant BBSCGI => '2021/01/10';		# Dia da ultima atualização
 use constant ADMIN_PASS => '';			# Admin password. For fucks's sake, change this.
 use constant SECRET => '';				# Cryptographic secret. CHANGE THIS to something totally random, and long.
 use constant CAPPED_TRIPS => ('');	# Admin tripcode hash, for startng threads when locked down, and similar. Format is '!trip'=>'capcode', where 'capcode' is what is shown instead of the trip. This can contain HTML, but keep it valid XHTML!
