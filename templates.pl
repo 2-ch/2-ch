@@ -76,26 +76,26 @@ use constant S_FRONT => 'Front page';								# Title of the front page in page l
 # Error strings
 #
 
-use constant S_BADCAPTCHA => 'Wrong verification code entered.';			# Error message when the captcha is wrong
-use constant S_UNJUST => 'Posting must be done through a POST request.';	# Error message on an unjust POST - prevents floodbots or ways not using POST method?
-use constant S_NOTEXT => 'No text entered.';								# Error message for no text entered in to title/comment
-use constant S_NOTITLE => 'No title entered.';								# Error message for no title entered
-use constant S_NOTALLOWED => 'Posting not allowed.';						# Error message when the posting type is forbidden for non-admins
-use constant S_TOOLONG => 'The %s field is too long, by %d characters.';	# Error message for too many characters in a given field
-use constant S_UNUSUAL => 'Abnormal reply.';								# Error message for abnormal reply? (this is a mystery!)
-use constant S_SPAM => 'Spammers are not welcome here!';					# Error message when detecting spam
-use constant S_THREADCOLL => 'Somebody else tried to post a thread at the same time. Please try again.';		# If two people create threads during the same second
-use constant S_NOTHREADERR => 'Thread specified does not exist.';			# Error message when a non-existant thread is accessed
-use constant S_BADDELPASS => 'Password incorrect.';							# Error message for wrong password (when user tries to delete file)
-use constant S_NOTWRITE => 'Cannot write to directory.';					# Error message when the script cannot write to the directory, the chmod (777) is wrong
-use constant S_NOTASK => 'Script error; no valid task specified.';			# Error message when calling the script incorrectly
-use constant S_NOLOG => 'Couldn\'t write to log.txt.';						# Error message when log.txt is not writeable or similar
-use constant S_TOOBIG => 'The file you tried to upload is too large.';		# Error message when the image file is larger than MAX_KB
-use constant S_EMPTY => 'The file you tried to upload is empty.';			# Error message when the image file is 0 bytes
-use constant S_BADFORMAT => 'File format not allowed.';						# Error message when the file is not in a supported format.
-use constant S_DUPE => 'This file has already been posted <a href="%s">here</a>.';	# Error message when an md5 checksum already exists.
-use constant S_DUPENAME => 'A file with the same name already exists.';		# Error message when an filename already exists.
-use constant S_THREADCLOSED => 'This thread is closed.';					# Error message when posting in a legen^H^H^H^H^H closed thread									
+use constant S_BADCAPTCHA => 'Código de verificação foi digitado errado';
+use constant S_UNJUST => 'Escrita tem que ser feita por POST request';
+use constant S_NOTEXT => 'Sem texto';
+use constant S_NOTITLE => 'Subject não existe';
+use constant S_NOTALLOWED => 'Não pode escrever.';
+use constant S_TOOLONG => '%s é longosugimasu, por %d caracteres';
+use constant S_UNUSUAL => 'Resu anormal';
+use constant S_SPAM => 'Sua escrita foi detectada como spam';
+use constant S_THREADCOLL => 'Alguém escreveu ao mesmo tempo. Tente novamente';
+use constant S_NOTHREADERR => 'Esta thread não existe';
+use constant S_BADDELPASS => '削除key incorreta.';
+use constant S_NOTWRITE => 'Impossivel gravar ao diretório';
+use constant S_NOTASK => 'Script error; nenhuma tarefa válida especificada';
+use constant S_NOLOG => 'Impossivel escrever em log.txt';
+use constant S_TOOBIG => 'Arquivo muito grande';
+use constant S_EMPTY => 'Arquivo vazio';
+use constant S_BADFORMAT => 'Formato de arquivo não permitido';	
+use constant S_DUPE => 'Este arquivo já existe <a href="%s">aqui</a>.';
+use constant S_DUPENAME => 'Um arquivo com mesmo nome já existe';	
+use constant S_THREADCLOSED => 'Não é possivel escrever nesta thread';							
 
 
 
