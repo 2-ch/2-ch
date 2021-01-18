@@ -1,5 +1,5 @@
 # Configuração do sistema
-use constant BBSCGI => '2021/01/10';		# Dia da ultima atualização
+use constant BBSCGI => '2021/01/18';		# Dia da ultima atualização
 use constant ADMIN_PASS => '';			# Senha de administrador
 use constant SECRET => '';				# Segredo criptografico. Mude para algo aleatório e longo.
 use constant CAPPED_TRIPS => ('');	# Hash do trip de administrador, Para levantar thread quando trancadas, e afins. Formato é '!trip'=>'cap', 'cap' é o que exibe ao invés da trip. Isso pode conter HTML, mas tem que ser XHTML valido!
