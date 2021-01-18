@@ -10,7 +10,7 @@ use constant SHOWTITLETXT => 1;				# Mostrar titulo (1: sim  0: não)
 use constant THREADS_DISPLAYED => 10;			# Numero de sure na pagina principal
 use constant THREADS_LISTED => 40;				# Number of threads in the thread list
 use constant REPLIES_PER_THREAD => 10;			# Resu exibidas
-use constant S_ANONAME => '名無しさん＠Obarriga cheia。';			# Define o nome caso nada foi inserido no campo de nome
+use constant S_ANONAME => '名無しさん＠お腹いっぱい。';			# Define o nome caso nada foi inserido no campo de nome
 use constant DEFAULT_STYLE => 'Pseud0ch';		# Nome do estilo de CSS padrão
 use constant FAVICON => 'kareha.ico';			# Caminho para a favicon do ita.
 
