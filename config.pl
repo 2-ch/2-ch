@@ -84,6 +84,7 @@ use constant DEFAULT_MARKUP => 'none';			# Formato padrão de markup, of the abo
 #use constant USE_XHTML => 1;					# Send pages as application/xhtml+xml to browsers that support this (0:no, 1:yes)
 use constant KEEP_MAINPAGE_NEWLINES => 1;		# Não remover espaço em branco da página principal (needed for Google ads to work, 0:no, 1:yes)
 use constant SPAM_TRAP => 0;					# Enable the spam trap (empty, hidden form fields that spam bots usually fill out) (0:no, 1:yes)
+use constant BBS_JUMP => 1;		# Ativar a página Jump@2-ch
 
 # Caminhos e arquivos internos
 #use constant RES_DIR => 'res/';				# Diretório de cache de resu (precisa ser gravável pela script)
