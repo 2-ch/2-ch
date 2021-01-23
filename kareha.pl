@@ -485,17 +485,15 @@ sub simple_format($$)
 		$line=~s!&gt;&gt;($replyrange_re)!\<a href="$ENV{SCRIPT_NAME}/$thread/$1" rel="nofollow"\>&gt;&gt;$1\</a\>!gm;
 
 		# make URLs into links
-		$line=~s{$url_re}{\<a href="$1" rel="nofollow"\>$1\</a\>$2}sgi;
-
+    if(BBS_JUMP) {
+    		$line=~s{$url_re}{\<a href="http://jump.2-ch.heliohost.org/?$1" rel="nofollow"\>$1\</a\>$2}sgi;
+        $line;
+    }
+    else {
+        $line=~s{$url_re}{\<a href="$1" rel="nofollow"\>$1\</a\>$2}sgi;
 		$line;
+    }
 	} split /(?:\r\n|\n|\r)/,clean_string(decode_string($text));
-}
-
-sub aa_format($$)
-{
-	my ($text,$thread)=@_;
-
-	return '<div class="aa">'.simple_format($text,$thread).'</div>';
 }
 
 sub wakabamark_format($$)
