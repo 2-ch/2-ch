@@ -145,8 +145,8 @@ use constant POSTING_FORM_TEMPLATE => compile_template(q{
 <const S_TITLE>
 		<input type="text" name="title" size="46" maxlength="<const MAX_FIELD_LENGTH>" />
 		<input type="submit" value="<const S_NEWTHREAD>" />
-		</br>
-        </br>
+		<br/>
+        <br/>
 </tr></if>
 
 <tr>
