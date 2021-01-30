@@ -107,9 +107,8 @@ use constant GLOBAL_HEAD_INCLUDE => q{
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
-<head>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
 <title><if $title><var $title> - </if><const TITLE></title>
-<meta http-equiv="Content-Type" content="text/html;charset=<const CHARSET>" />
 <link rel="shortcut icon" href="<const expand_filename(FAVICON)>" />
 
 <if RSS_FILE>
@@ -312,9 +311,9 @@ use constant THREAD_HEAD_TEMPLATE => compile_template( GLOBAL_HEAD_INCLUDE.q{
 <if $permasage><div class="sagethread"></if>
 <if !$permasage><div class="thread"></if>
 <h2><var $title> <small>(<var $postcount><if $permasage><const S_PERMASAGED></if>)</small></h2>
-
 <div class="replies">
 <div class="allreplies">
+
 });
 
 
@@ -324,17 +323,15 @@ use constant THREAD_FOOT_TEMPLATE => compile_template( q{
 </div>
 </div>
 
-<if AUTOCLOSE_SIZE>
-<h4><var int($size/1024)> kb</h4>
-</if>
+<h4><var int($size/1024)> KB</h4>
 
 <form id="postform<var $thread>" action="<var $self>" method="post"  enctype="multipart/form-data">
 
 <input type="hidden" name="task" value="post" />
 <input type="hidden" name="thread" value="<var $thread>" />
 <input type="hidden" name="password" value="" />
-<table><tbody>
 <if $closed><tr><td></td><td><big><const S_CLOSEDTHREAD></big></td></tr></if>
+<table><tbody>
 <tr>
 	<td><div class="threadlinks">
 	<a href="<const expand_filename(HTML_SELF)>"><const S_RETURN2></a>
