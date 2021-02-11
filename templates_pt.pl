@@ -48,7 +48,7 @@ use constant S_USERDELETE => 'Apagado por usuário.';
 use constant S_MODDELETE => 'Aboーn';
 use constant S_CLOSEDTHREAD => '<div style="background-color:red;color:white;line-height:1em;margin:1px;padding:3px;">■ Não pode mais escrever</div>';
 use constant S_SPAMTRAP => 'Deixe estes campos vazios: ';
-use constant S_MOBILE => 'Uso';
+use constant S_MOBILE => 'Uso Sumaho';
 
 use constant S_MOREOPTS => "";
 use constant S_FORMATTING => "Formatação:";
